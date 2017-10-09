@@ -1,0 +1,17 @@
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\bin\Debug\K7Burguer.Aplicacao.dll.config
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\bin\Debug\K7Burguer.Aplicacao.dll
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\bin\Debug\K7Burguer.Aplicacao.pdb
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\bin\Debug\EntityFramework.dll
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\bin\Debug\K7Burguer.Dominio.dll
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\bin\Debug\K7Burguer.Dados.dll
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\bin\Debug\K7Burguer.Dominio.pdb
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\bin\Debug\K7Burguer.Dominio.dll.config
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\bin\Debug\EntityFramework.xml
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\bin\Debug\K7Burguer.Dados.pdb
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\bin\Debug\K7Burguer.Dados.dll.config
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\obj\Debug\K7Burguer.Aplicacao.csprojResolveAssemblyReference.cache
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\obj\Debug\K7Burguer.Aplicacao.dll
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\obj\Debug\K7Burguer.Aplicacao.pdb
+C:\Users\Henri\OneDrive\Documentos\Visual Studio 2017\Projects\K7Burguer\K7Burguer.Aplicacao\obj\Debug\K7Burguer.Aplicacao.csproj.CoreCompileInputs.cache
