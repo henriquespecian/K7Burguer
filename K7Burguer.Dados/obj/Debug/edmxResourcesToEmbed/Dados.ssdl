@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HamburgueriaVerityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Batata">
+    <Key>
+      <PropertyRef Name="CodBatata" />
+    </Key>
+    <Property Name="CodBatata" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bebida">
+    <Key>
+      <PropertyRef Name="CodBebida" />
+    </Key>
+    <Property Name="CodBebida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hamburguer">
+    <Key>
+      <PropertyRef Name="CodHamburguer" />
+    </Key>
+    <Property Name="CodHamburguer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Ingredientes" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="CodPedido" />
+    </Key>
+    <Property Name="CodPedido" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodHamburguer" Type="int" />
+    <Property Name="CodBebida" Type="int" />
+    <Property Name="CodBatata" Type="int" />
+    <Property Name="ValorTotal" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="QtdHamburguer" Type="int" />
+    <Property Name="QtdBebida" Type="int" />
+    <Property Name="DataPedido" Type="datetime" Nullable="false" />
+    <Property Name="QtdBatata" Type="int" />
+  </EntityType>
+  <Association Name="fk_CodBatata">
+    <End Role="Batata" Type="Self.Batata" Multiplicity="0..1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Batata">
+        <PropertyRef Name="CodBatata" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="CodBatata" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CodBebida">
+    <End Role="Bebida" Type="Self.Bebida" Multiplicity="0..1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bebida">
+        <PropertyRef Name="CodBebida" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="CodBebida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CodHamburguer">
+    <End Role="Hamburguer" Type="Self.Hamburguer" Multiplicity="0..1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hamburguer">
+        <PropertyRef Name="CodHamburguer" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="CodHamburguer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HamburgueriaVerityModelStoreContainer">
+    <EntitySet Name="Batata" EntityType="Self.Batata" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bebida" EntityType="Self.Bebida" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hamburguer" EntityType="Self.Hamburguer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pedido" EntityType="Self.Pedido" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_CodBatata" Association="Self.fk_CodBatata">
+      <End Role="Batata" EntitySet="Batata" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CodBebida" Association="Self.fk_CodBebida">
+      <End Role="Bebida" EntitySet="Bebida" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CodHamburguer" Association="Self.fk_CodHamburguer">
+      <End Role="Hamburguer" EntitySet="Hamburguer" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

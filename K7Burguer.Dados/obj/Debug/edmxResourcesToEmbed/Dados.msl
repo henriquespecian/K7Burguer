@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HamburgueriaVerityModelStoreContainer" CdmEntityContainer="HamburgueriaVerityEntities">
+    <EntitySetMapping Name="Batata">
+      <EntityTypeMapping TypeName="HamburgueriaVerityModel.Batata">
+        <MappingFragment StoreEntitySet="Batata">
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="CodBatata" ColumnName="CodBatata" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bebida">
+      <EntityTypeMapping TypeName="HamburgueriaVerityModel.Bebida">
+        <MappingFragment StoreEntitySet="Bebida">
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="CodBebida" ColumnName="CodBebida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hamburguer">
+      <EntityTypeMapping TypeName="HamburgueriaVerityModel.Hamburguer">
+        <MappingFragment StoreEntitySet="Hamburguer">
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Ingredientes" ColumnName="Ingredientes" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="CodHamburguer" ColumnName="CodHamburguer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pedido">
+      <EntityTypeMapping TypeName="HamburgueriaVerityModel.Pedido">
+        <MappingFragment StoreEntitySet="Pedido">
+          <ScalarProperty Name="QtdBatata" ColumnName="QtdBatata" />
+          <ScalarProperty Name="DataPedido" ColumnName="DataPedido" />
+          <ScalarProperty Name="QtdBebida" ColumnName="QtdBebida" />
+          <ScalarProperty Name="QtdHamburguer" ColumnName="QtdHamburguer" />
+          <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+          <ScalarProperty Name="CodBatata" ColumnName="CodBatata" />
+          <ScalarProperty Name="CodBebida" ColumnName="CodBebida" />
+          <ScalarProperty Name="CodHamburguer" ColumnName="CodHamburguer" />
+          <ScalarProperty Name="CodPedido" ColumnName="CodPedido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

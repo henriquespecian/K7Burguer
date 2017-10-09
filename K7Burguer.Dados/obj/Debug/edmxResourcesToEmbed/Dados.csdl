@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HamburgueriaVerityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HamburgueriaVerityEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Batata" EntityType="HamburgueriaVerityModel.Batata" />
+    <EntitySet Name="Bebida" EntityType="HamburgueriaVerityModel.Bebida" />
+    <EntitySet Name="Hamburguer" EntityType="HamburgueriaVerityModel.Hamburguer" />
+    <EntitySet Name="Pedido" EntityType="HamburgueriaVerityModel.Pedido" />
+    <AssociationSet Name="fk_CodBatata" Association="HamburgueriaVerityModel.fk_CodBatata">
+      <End Role="Batata" EntitySet="Batata" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CodBebida" Association="HamburgueriaVerityModel.fk_CodBebida">
+      <End Role="Bebida" EntitySet="Bebida" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CodHamburguer" Association="HamburgueriaVerityModel.fk_CodHamburguer">
+      <End Role="Hamburguer" EntitySet="Hamburguer" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Batata">
+    <Key>
+      <PropertyRef Name="CodBatata" />
+    </Key>
+    <Property Name="CodBatata" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Valor" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="Pedido" Relationship="HamburgueriaVerityModel.fk_CodBatata" FromRole="Batata" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="Bebida">
+    <Key>
+      <PropertyRef Name="CodBebida" />
+    </Key>
+    <Property Name="CodBebida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Valor" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="Pedido" Relationship="HamburgueriaVerityModel.fk_CodBebida" FromRole="Bebida" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="Hamburguer">
+    <Key>
+      <PropertyRef Name="CodHamburguer" />
+    </Key>
+    <Property Name="CodHamburguer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Ingredientes" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Valor" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="Pedido" Relationship="HamburgueriaVerityModel.fk_CodHamburguer" FromRole="Hamburguer" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="CodPedido" />
+    </Key>
+    <Property Name="CodPedido" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodHamburguer" Type="Int32" />
+    <Property Name="CodBebida" Type="Int32" />
+    <Property Name="CodBatata" Type="Int32" />
+    <Property Name="ValorTotal" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="QtdHamburguer" Type="Int32" />
+    <Property Name="QtdBebida" Type="Int32" />
+    <Property Name="DataPedido" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="QtdBatata" Type="Int32" />
+    <NavigationProperty Name="Batata" Relationship="HamburgueriaVerityModel.fk_CodBatata" FromRole="Pedido" ToRole="Batata" />
+    <NavigationProperty Name="Bebida" Relationship="HamburgueriaVerityModel.fk_CodBebida" FromRole="Pedido" ToRole="Bebida" />
+    <NavigationProperty Name="Hamburguer" Relationship="HamburgueriaVerityModel.fk_CodHamburguer" FromRole="Pedido" ToRole="Hamburguer" />
+  </EntityType>
+  <Association Name="fk_CodBatata">
+    <End Type="HamburgueriaVerityModel.Batata" Role="Batata" Multiplicity="0..1" />
+    <End Type="HamburgueriaVerityModel.Pedido" Role="Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Batata">
+        <PropertyRef Name="CodBatata" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="CodBatata" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CodBebida">
+    <End Type="HamburgueriaVerityModel.Bebida" Role="Bebida" Multiplicity="0..1" />
+    <End Type="HamburgueriaVerityModel.Pedido" Role="Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bebida">
+        <PropertyRef Name="CodBebida" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="CodBebida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CodHamburguer">
+    <End Type="HamburgueriaVerityModel.Hamburguer" Role="Hamburguer" Multiplicity="0..1" />
+    <End Type="HamburgueriaVerityModel.Pedido" Role="Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hamburguer">
+        <PropertyRef Name="CodHamburguer" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="CodHamburguer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,11 @@
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Dados\bin\Debug\K7Burguer.Dados.dll.config
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Dados\bin\Debug\K7Burguer.Dados.dll
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Dados\bin\Debug\K7Burguer.Dados.pdb
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Dados\bin\Debug\EntityFramework.dll
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Dados\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Dados\bin\Debug\EntityFramework.xml
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Dados\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Dados\obj\Debug\K7Burguer.Dados.csprojResolveAssemblyReference.cache
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Dados\obj\Debug\K7Burguer.Dados.dll
+c:\users\henri\onedrive\documentos\visual studio 2017\Projects\K7Burguer\K7Burguer.Dados\obj\Debug\K7Burguer.Dados.pdb
+C:\Users\Henri\OneDrive\Documentos\Visual Studio 2017\Projects\K7Burguer\K7Burguer.Dados\obj\Debug\K7Burguer.Dados.csproj.CoreCompileInputs.cache
