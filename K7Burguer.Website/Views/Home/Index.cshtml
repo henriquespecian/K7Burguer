@@ -1,0 +1,84 @@
+﻿@model K7Burguer.Website.Models.PedidoModel
+@{
+    ViewBag.Title = "Pedidos Realizados";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.maskMoney.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/js/Hamburguer.js")" type="text/javascript"></script>
+
+</head>
+<body>
+<script>
+    $(document).ready(function ($) {
+
+        $("#Valor").maskMoney({
+            symbol: 'R$ ',
+            showSymbol: true, thousands: '.', decimal: ',', symbolStay: true
+        });
+
+    });
+
+</script>
+
+
+    <div id="main" class="container-fluid" style="margin-top: 50px">
+
+        <div id="top" class="row">
+            <div class="col-sm-12">
+                <h2>Hambúrguer</h2>
+            </div>
+
+        </div>
+
+        <hr />
+        <div id="list" class="row">
+
+            <div class="table-responsive col-md-12">
+                <table class="table table-striped" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th >Data do Pedido</th>
+                            <th>Nome do Hamburguer</th>
+                            <th>Quantidade</th>
+                            <th>Nome da Bebida</th>
+                            <th>Quantidade</th>
+                            <th >Nome da Batata</th>
+                            <th >Valor Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.ListaPedido != null && Model.ListaPedido.Any())
+                        {
+                            foreach (var item in Model.ListaPedido)
+                            {
+                                <tr>
+                                    <td>@item.DataPedido</td>
+                                    <td>@item.NomeHamburguer</td>
+                                    <td>@item.QtdHamburguer</td>
+                                    <td>@item.NomeBebida</td>
+                                    <td>@item.QtdBebida</td>
+                                    <td>@item.NomeBatata</td>
+                                    <td>@item.ValorTotal.ToString("C")</td>
+                                    <td></td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>

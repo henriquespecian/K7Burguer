@@ -1,0 +1,71 @@
+﻿@model K7Burguer.Website.Models.BatataModel
+@{
+    ViewBag.Title = "Batata";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="@Url.Content("~/Scripts/js/Batata.js")" type="text/javascript"></script>
+
+</head>
+<body>
+
+
+
+    <div id="main" class="container-fluid" style="margin-top: 50px">
+
+        <div id="top" class="row">
+            <div class="col-sm-3">
+                <h2>Batata</h2>
+            </div>
+            <div class="col-sm-9">
+                @Html.ActionLink("Adicionar", "Adicionar", "Batata", null, new { @class = "btn btn-primary pull-right h2" })
+            </div>
+        </div>
+
+        <hr />
+        <div id="list" class="row">
+
+            <div class="table-responsive col-md-12">
+                <table class="table table-striped" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th width="30%">Nome</th>
+                            <th width="40%">Descrição</th>
+                            <th width="10%">Preço</th>
+                            <th width="20%" class="actions">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.ListaBatata != null && Model.ListaBatata.Any())
+                        {
+                            foreach (var item in Model.ListaBatata)
+                            {
+                                <tr>
+                                    <td>@item.Nome</td>
+                                    <td>@item.Descricao</td>
+                                    <td>@item.Valor.ToString("C")</td>
+                                    <td class="actions">
+                                        @Html.ActionLink("Editar", "Editar", "Batata", new { idBatata = @item.CodBatata }, new { id = "botaoEditar", @class = "btn btn-warning btn-xs" })
+                                        @Html.ActionLink("Excluir", "", "", new { id = "botaoExcluir", @class = "btn btn-danger btn-xs", onclick = "javascript:excluirBatata('" + @item.CodBatata + "');" })
+                                        <input type="hidden" value="@item.CodBatata" id="codBatata" />
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>
